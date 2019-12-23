@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="d-flex pb-3 cln">
+    <div class="p-2" style="flex-grow: 3">
+      <input type="text" [(ngModel)]="inputString" (input)="searchBy()"
+        placeholder="Search By firstName or lastName or eyeColor or Company or address" style="background:transparent;width: 100%;
+             border: none;
+             outline: none;
+             border-bottom: 1px solid #000;">
+    </div>
+    <div class="p-2">
+      <p *ngIf="peopleData" class="text-center">No of Searches Appeared : {{peopleData.length}}/9902</p>
+    </div>
+
+  </div>
+  <div class="d-flex justify-content-around align-items-center py-5" style="height: 70vh"
+    *ngIf="peopleData.length == 0">
+    <div class="card pastelBlueVoilet p-5">
+      <div class="card-body">
+        <h4 class="card-text"><b>No data found. Please search with another keyword</b></h4>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12"
+      *ngFor="let arr of peopleData | paginate:{ itemsPerPage:9, currentPage:pageNo }">
+      <div class="card pastelBlueVoilet m-2">
+        <div class="card-body">
+          <p class="card-text"><b>Name</b> : {{arr.name.first}} {{arr.name.last}}</p>
+          <p class="card-text"><b>Balance</b> : {{arr.balance}}</p>
+          <p class="card-text"><b>Age</b> : {{arr.age}}</p>
+          <p class="card-text"><b>Eye Color</b> : {{arr.eyeColor}}</p>
+          <p class="card-text"><b>Company</b> : {{arr.company}}</p>
+          <p class="card-text"><b>Email</b> : {{arr.email}}</p>
+          <p class="card-text"><b>Phone</b> : {{arr.phone}}</p>
+          <p class="card-text"><b>Address</b> : {{arr.address}}</p>
+          <p class="card-text"><b>Registered</b> : {{arr.registered}}</p>
+          <p class="card-text"><b>Lat</b> : {{arr.latitude}}, <b>Lng</b> : {{arr.longitude}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center p-2">
+    <pagination-controls (pageChange)="pageNo=$event"></pagination-controls>
+  </div>
+</div>

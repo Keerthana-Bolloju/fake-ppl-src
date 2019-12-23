@@ -1,0 +1,9 @@
+.pastelBlueVoilet{
+    background: rgba(173, 196, 206,0.5);
+}
+
+@media screen and (max-width:768px){
+.cln{
+    flex-direction:column
+}
+}

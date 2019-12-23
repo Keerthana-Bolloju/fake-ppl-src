@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-between">
+      <div class="card pastelBlue p-3">
+          <div class="card-body">
+            <p class="card-text m-50 text-center"> The average age of everyone with blue eyes - <b>{{blueEyesAvg |number:'1.0-1'}} Years</b></p>
+          </div>
+        </div>        
+    <div class="card pastelGreen p-3 mx-2">
+        <div class="card-body">
+          <p class="card-text m-50 text-center">The number of people with green eyes - <b>{{greenEyes}}</b></p>
+        </div>
+      </div>
+    <div class="card pastelBlue p-3">
+        <div class="card-body">
+          <p class="card-text">The top 10 most common surnames with their totals</p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                <div class="d-flex flex-column">
+                  <div class="px-1" *ngFor="let name of surname">{{name}}</div>
+                </div> 
+                </td>
+                <td>
+                <div class="d-flex flex-column">
+                  <div class="px-1" *ngFor="let lgt of surnameLength">{{lgt}}</div>
+                </div> 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+
+<h4 class="text-center pt-4">People live nearby Eiffel Tower</h4> 
+<hr>
+<div class="row">
+  <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let arr of addressArr">
+  <div class="card pastelBlueVoilet m-2">
+    <div class="card-body">
+      <p class="card-text"><b>Name</b> : {{arr.name.first}} {{arr.name.last}}</p>
+      <p class="card-text"><b>Balance</b> : {{arr.balance}}</p>
+      <p class="card-text"><b>Age</b> : {{arr.age}}</p>
+      <p class="card-text"><b>Eye Color</b> : {{arr.eyeColor}}</p>
+      <p class="card-text"><b>Company</b> : {{arr.company}}</p>
+      <p class="card-text"><b>Email</b> : {{arr.email}}</p>
+      <p class="card-text"><b>Phone</b> : {{arr.phone}}</p>
+      <p class="card-text"><b>Address</b> : {{arr.address}}</p>
+      <p class="card-text"><b>Registered</b> : {{arr.registered}}</p>
+      <p class="card-text"><b>Lat</b> : {{arr.latitude}}, <b>Lng</b> : {{arr.longitude}}</p>
+    </div>
+  </div>   
+</div>   
+</div>

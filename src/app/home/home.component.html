@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center p-4">
+    <h4>Fake People Data</h4>
+  </div>
+  <div class="d-flex justify-content-around align-items-center pastelVoilet px-5 py-3">
+    <h4 class="px-1 navHov" (click)="tabOne('getData')" [ngClass]="{'active':currentTab == 'getData'}">Get Data</h4>
+    <h4 class="px-1 navHov" (click)="tabTwo('searchBy')" [ngClass]="{'active':currentTab == 'searchBy'}">Search By</h4>
+  </div>
+  <div class="d-flex flex-column justify-content-center bg-light p-4 mb-4" *ngIf="activeTabOne">
+    <app-people-data></app-people-data>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center bg-light p-4 mb-4" *ngIf="activeTabTwo">
+    <app-search-data></app-search-data>
+  </div>
+</div>

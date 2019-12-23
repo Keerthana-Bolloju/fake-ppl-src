@@ -1,0 +1,17 @@
+.pastelGreen{
+    background: #AFD5AA;
+}
+
+.pastelBlue{
+    background: #83C6DD;
+}
+
+.pastelBlueVoilet{
+    background: rgba(173, 196, 206,0.5);
+}
+.card{
+    border-radius: 10px;
+}
+.m-50{
+    margin-top:50%
+}

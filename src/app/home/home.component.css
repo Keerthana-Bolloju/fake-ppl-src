@@ -1,0 +1,13 @@
+
+.pastelVoilet{
+    background: #957DAD
+}
+.navHov:hover{
+color:#fff;
+text-decoration: underline;
+cursor:pointer
+}
+.active{
+    color:#fff;
+    text-decoration: underline;
+}
